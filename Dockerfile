@@ -3,5 +3,6 @@ WORKDIR /root
 
 COPY kong.spec /root/
 
+RUN mkdir /root/rpmbuild/BUILDROOT
 RUN spectool -g -R kong.spec
 RUN rpmbuild -ba kong.spec
