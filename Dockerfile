@@ -4,5 +4,6 @@ WORKDIR /root
 COPY kong.spec /root/
 
 RUN mkdir /root/rpmbuild/BUILDROOT
+RUN dos2unix kong.spec
 RUN spectool -g -R kong.spec
 RUN rpmbuild -ba kong.spec
